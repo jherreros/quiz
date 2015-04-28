@@ -7,8 +7,9 @@
   </head>
   <body>
     <h1><%= title %></h1>
-    <p>El portal donde podrá crear sus propios juegos!</p>
-    <p><a href="/author">Autor del proyecto</a></p>
+    <p>Web creada por Juan Herreros Elorza</p>
+    <img src="foto.png" alt="Foto de JH">
+    <p><a href="/">Página principal</a></p>
   </body>
-  <footer><a href="http://www.github.com/jherreros/quiz">Proyecto en GitHub</footer>
+  <footer><a href="http://www.github.com/jherreros/quiz">Proyecto en GitHub</a></footer>
 </html>
