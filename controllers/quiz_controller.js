@@ -1,3 +1,5 @@
+var models = require('../models/models.js')
+
 // GET /quizes/question
 exports.question = function(req, res) {
 	models.Quiz.findAll().success(function(quiz) {
