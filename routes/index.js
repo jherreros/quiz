@@ -13,7 +13,7 @@ router.get('/author', function(req, res, next) {
   res.render('author', { title: 'Página de créditos' });
 });
 
-router.get('quizes/question', quizController.question);
-router.get('quizes/answer', quizcontroller.answer);
+router.get('/quizes/question', quizController.question);
+router.get('/quizes/answer', quizController.answer);
 
 module.exports = router;
