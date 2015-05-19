@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 
 /* GET author page. */
 router.get('/author', function(req, res, next) {
-  res.render('author', { title: 'Página de créditos' });
+  res.render('author', { title: 'Página de créditos' , errors: []});
 });
 
 router.get('/quizes/question', quizController.question);
@@ -36,6 +36,8 @@ router.post('/quizes/create', sessionController.loginRequired, quizController.cr
 router.get('/quizes/:quizId(\\d+)/edit', sessionController.loginRequired, quizController.edit);
 router.put('/quizes/:quizId(\\d+)', sessionController.loginRequired, quizController.update);
 router.delete('/quizes/:quizId(\\d+)', sessionController.loginRequired, quizController.destroy);
+
+router.get('/quizes/statistics', quizController.stats);
 
 // Definición de rutas de comentarios
 router.get('/quizes/:quizId(\\d+)/comments/new', commentController.new);

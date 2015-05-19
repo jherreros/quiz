@@ -76,5 +76,20 @@ app.use(function(err, req, res, next) {
   });
 });
 
+//Auto logout
+app.use(function(req,res,next){
+  if(req.session.user){
+    if(req.session.user.hora){
+      if((new Date() - new Date(req.session.user.hora)) > 120000){
+        delete req.session.user;
+        next();
+        return;
+      }
+    }
+    req.session.user.hora = new Date();
+  }
+
+  next();
+});
 
 module.exports = app;

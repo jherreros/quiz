@@ -125,3 +125,17 @@ exports.destroy = function(req, res) {
 		res.redirect('/quizes');
 	}).catch(function(error){next(error)});
 };
+
+exports.stats = function(req, res) {
+	numPreguntas = 3;
+	numComentarios = 5;
+	mediaComments = numComentarios/numPreguntas;
+	pregSin = 1;
+	pregCon = numPreguntas - pregSin;
+	res.render('quizes/statistics', {numPreguntas: numPreguntas, 
+									numComentarios: numComentarios, 
+									mediaComments: mediaComments,
+									pregSin:pregSin,
+									pregCon:pregCon,
+									 errors: []});
+}
