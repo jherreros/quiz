@@ -35,10 +35,14 @@ exports.question = function(req, res) {
 
 // GET /quizes
 exports.index= function(req,res) {
+	var options = {};
+	if(req.user){
+		options.where = {UserId: req.user.id}
+	}
 	console.log(req.query.search);
 	search = req.query.search;
 	search2 = "%"+search+"%";
-	models.Quiz.findAll({where: ["pregunta like ?", search2]}).then(
+	models.Quiz.findAll(options, {where: ["pregunta like ?", search2]}).then(
 	//models.Quiz.findAll().then(
 		function(quizes){
 			res.render('quizes/index', { quizes: quizes, errors: []});
