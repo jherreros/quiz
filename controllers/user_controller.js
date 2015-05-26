@@ -93,3 +93,7 @@ exports.destroy = function (req, res){
 		res.redirect('/');
 	}).catch(function(error){next(error)});
 };
+
+exports.favourites = function (req, res){
+	res.render('user/favourites');
+}
